@@ -1,0 +1,156 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- 배경 그라데이션 정의 -->
+    <defs>
+        <!-- 하늘색 메인 그라데이션 -->
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- 글래스 효과 -->
+        <linearGradient id="glassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6" />
+            <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.1" />
+            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3" />
+        </linearGradient>
+
+        <!-- 건물 그라데이션 -->
+        <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#e6f3fa;stop-opacity:0.95" />
+        </linearGradient>
+
+        <!-- 블러 필터 -->
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        </filter>
+
+        <!-- 글로우 효과 -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- 소프트 그림자 -->
+        <filter id="softShadow">
+            <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+
+    <!-- 배경 -->
+    <rect x="0" y="0" width="512" height="512" rx="120" ry="120" fill="url(#bgGradient)"/>
+
+    <!-- 배경 장식 원들 (구름 효과) -->
+    <circle cx="100" cy="100" r="75" fill="#ffffff" opacity="0.15" filter="url(#blur)"/>
+    <circle cx="412" cy="150" r="100" fill="#ffffff" opacity="0.1" filter="url(#blur)"/>
+    <circle cx="75" cy="400" r="60" fill="#ffffff" opacity="0.12" filter="url(#blur)"/>
+
+    <!-- 메인 글래스모피즘 컨테이너 -->
+    <rect x="106" y="106" width="300" height="300" rx="50"
+          fill="url(#glassGradient)"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-opacity="0.7"
+          filter="url(#softShadow)"/>
+
+    <!-- 대학교 건물 아이콘 -->
+    <g transform="translate(256, 210)">
+        <!-- 건물 그림자 (깊이감) -->
+        <ellipse cx="0" cy="60" rx="70" ry="15" fill="#2C5AA0" opacity="0.1" filter="url(#blur)"/>
+
+        <!-- 건물 본체 -->
+        <rect x="-60" y="-50" width="120" height="110" rx="2"
+              fill="url(#buildingGradient)"
+              filter="url(#softShadow)"/>
+
+        <!-- 시계탑 -->
+        <g transform="translate(0, -50)">
+            <!-- 탑 본체 -->
+            <rect x="-20" y="-40" width="40" height="40" fill="#ffffff" opacity="0.9"/>
+            <!-- 지붕 -->
+            <path d="M-25,0 L0,-20 L25,0 Z" fill="#2C5AA0"/>
+            <!-- 시계 -->
+            <circle cx="0" cy="-20" r="10" fill="#2C5AA0" opacity="0.8"/>
+            <circle cx="0" cy="-20" r="9" fill="#ffffff"/>
+            <line x1="0" y1="-20" x2="0" y2="-25" stroke="#2C5AA0" stroke-width="1"/>
+            <line x1="0" y1="-20" x2="4" y2="-17" stroke="#2C5AA0" stroke-width="1"/>
+        </g>
+
+        <!-- 기둥들 (대학 건물 특징) -->
+        <rect x="-50" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+        <rect x="-35" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+        <rect x="-20" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+        <rect x="16" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+        <rect x="31" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+        <rect x="46" y="-10" width="4" height="60" fill="#e0e0e0" opacity="0.8"/>
+
+        <!-- 아치형 창문들 (대학 건축 스타일) -->
+        <g opacity="0.7">
+            <!-- 상단 아치 창문 -->
+            <path d="M-40,-40 L-40,-20 Q-40,-10 -30,-10 Q-20,-10 -20,-20 L-20,-40 Z" fill="#4A90E2"/>
+            <path d="M-10,-40 L-10,-20 Q-10,-10 0,-10 Q10,-10 10,-20 L10,-40 Z" fill="#4A90E2"/>
+            <path d="M20,-40 L20,-20 Q20,-10 30,-10 Q40,-10 40,-20 L40,-40 Z" fill="#4A90E2"/>
+
+            <!-- 중간 창문들 -->
+            <rect x="-40" y="5" width="17" height="15" rx="3" fill="#87CEEB"/>
+            <rect x="-10" y="5" width="17" height="15" rx="3" fill="#87CEEB"/>
+            <rect x="20" y="5" width="17" height="15" rx="3" fill="#87CEEB"/>
+        </g>
+
+        <!-- 정문 (계단 포함) -->
+        <g transform="translate(0, 50)">
+            <!-- 계단 -->
+            <rect x="-30" y="5" width="60" height="3" fill="#d0d0d0" opacity="0.8"/>
+            <rect x="-27" y="2" width="54" height="3" fill="#d0d0d0" opacity="0.8"/>
+
+            <!-- 입구 아치 -->
+            <path d="M-15,-5 L-15,5 L15,5 L15,-5 Q15,-15 0,-15 Q-15,-15 -15,-5 Z"
+                  fill="#2C5AA0" opacity="0.8"/>
+
+            <!-- 문 -->
+            <rect x="-10" y="-2" width="9" height="7" fill="#1e3a5f"/>
+            <rect x="1" y="-2" width="9" height="7" fill="#1e3a5f"/>
+        </g>
+
+        <!-- 대학 상징 (방패 모양 엠블럼) -->
+        <g transform="translate(0, -25)">
+            <path d="M-8,-8 L8,-8 L8,0 Q8,8 0,10 Q-8,8 -8,0 Z"
+                  fill="#FFA726" opacity="0.9"/>
+            <text x="0" y="3" text-anchor="middle" font-size="8" font-weight="bold" fill="#4A90E2">I</text>
+        </g>
+    </g>
+
+    <!-- 혼잡도 인디케이터 (플로팅 스타일) -->
+    <g transform="translate(256, 350)">
+        <!-- 동적 버블 스타일 -->
+        <g filter="url(#glow)">
+            <!-- 여유 (초록) -->
+            <g transform="translate(-60, 0)">
+                <circle cx="0" cy="0" r="20" fill="#4CAF50" opacity="0.8"/>
+                <circle cx="0" cy="0" r="15" fill="#ffffff" opacity="0.3"/>
+                <circle cx="0" cy="0" r="10" fill="#4CAF50"/>
+            </g>
+
+            <!-- 보통 (주황) -->
+            <g transform="translate(0, -10)">
+                <circle cx="0" cy="0" r="25" fill="#FFA726" opacity="0.8"/>
+                <circle cx="0" cy="0" r="19" fill="#ffffff" opacity="0.3"/>
+                <circle cx="0" cy="0" r="12" fill="#FFA726"/>
+            </g>
+
+            <!-- 혼잡 (빨강) -->
+            <g transform="translate(60, -5)">
+                <circle cx="0" cy="0" r="22" fill="#E53935" opacity="0.8"/>
+                <circle cx="0" cy="0" r="17" fill="#ffffff" opacity="0.3"/>
+                <circle cx="0" cy="0" r="11" fill="#E53935"/>
+            </g>
+        </g>
+    </g>
+
+    <!-- 상단 하이라이트 (구름 느낌) -->
+    <ellipse cx="175" cy="125" rx="125" ry="60" fill="#ffffff" opacity="0.15"
+             transform="rotate(-25 175 125)" filter="url(#blur)"/>
+</svg>
