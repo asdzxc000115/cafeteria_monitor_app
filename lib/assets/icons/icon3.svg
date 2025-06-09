@@ -1,0 +1,109 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- 배경 그라데이션 정의 -->
+    <defs>
+        <!-- 메인 그라데이션 -->
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- 글래스 효과 -->
+        <linearGradient id="glassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+            <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.1" />
+            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3" />
+        </linearGradient>
+
+        <!-- 블러 필터 -->
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        </filter>
+
+        <!-- 글로우 효과 -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- 소프트 그림자 -->
+        <filter id="softShadow">
+            <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+
+    <!-- 배경 -->
+    <rect x="0" y="0" width="512" height="512" rx="120" ry="120" fill="url(#bgGradient)"/>
+
+    <!-- 배경 장식 원들 (블러 효과) -->
+    <circle cx="100" cy="100" r="75" fill="#ffffff" opacity="0.1" filter="url(#blur)"/>
+    <circle cx="412" cy="412" r="100" fill="#ffffff" opacity="0.1" filter="url(#blur)"/>
+    <circle cx="400" cy="150" r="50" fill="#ff6b6b" opacity="0.1" filter="url(#blur)"/>
+
+    <!-- 메인 글래스모피즘 컨테이너 -->
+    <rect x="106" y="106" width="300" height="300" rx="50"
+          fill="url(#glassGradient)"
+          stroke="#ffffff"
+          stroke-width="1"
+          stroke-opacity="0.5"
+          filter="url(#softShadow)"/>
+
+    <!-- 3D 건물 아이콘 -->
+    <g transform="translate(256, 200)">
+        <!-- 건물 뒷면 (3D 효과) -->
+        <path d="M-50,-50 L-40,-60 L40,-60 L50,-50 L50,50 L40,60 L-40,60 L-50,50 Z"
+              fill="#ffffff" opacity="0.2"/>
+
+        <!-- 건물 앞면 -->
+        <rect x="-60" y="-60" width="120" height="120" rx="15"
+              fill="#ffffff" opacity="0.9"/>
+
+        <!-- 창문 패턴 (그리드) -->
+        <g opacity="0.8">
+            <rect x="-40" y="-40" width="25" height="25" rx="5" fill="#667eea"/>
+            <rect x="-5" y="-40" width="25" height="25" rx="5" fill="#764ba2"/>
+            <rect x="30" y="-40" width="25" height="25" rx="5" fill="#667eea"/>
+
+            <rect x="-40" y="-5" width="25" height="25" rx="5" fill="#764ba2"/>
+            <rect x="-5" y="-5" width="25" height="25" rx="5" fill="#f093fb"/>
+            <rect x="30" y="-5" width="25" height="25" rx="5" fill="#764ba2"/>
+
+            <rect x="-40" y="30" width="25" height="25" rx="5" fill="#667eea"/>
+            <rect x="-5" y="30" width="25" height="25" rx="5" fill="#764ba2"/>
+            <rect x="30" y="30" width="25" height="25" rx="5" fill="#667eea"/>
+        </g>
+    </g>
+
+    <!-- 플로팅 혼잡도 인디케이터 -->
+    <g transform="translate(256, 350)">
+        <!-- 베이스 라인 -->
+        <rect x="-75" y="-2.5" width="150" height="5" rx="2.5" fill="#ffffff" opacity="0.3"/>
+
+        <!-- 동적 레벨 표시 -->
+        <g filter="url(#glow)">
+            <!-- 낮음 -->
+            <circle cx="-50" cy="0" r="15" fill="#4ade80" opacity="0.9"/>
+            <circle cx="-50" cy="0" r="10" fill="#ffffff" opacity="0.5"/>
+
+            <!-- 중간 -->
+            <circle cx="0" cy="-10" r="20" fill="#fbbf24" opacity="0.9"/>
+            <circle cx="0" cy="-10" r="14" fill="#ffffff" opacity="0.5"/>
+
+            <!-- 높음 -->
+            <circle cx="50" cy="-20" r="25" fill="#f87171" opacity="0.9"/>
+            <circle cx="50" cy="-20" r="17.5" fill="#ffffff" opacity="0.5"/>
+        </g>
+
+        <!-- 연결선 (플로우 표현) -->
+        <path d="M-50,0 Q-25,-5 0,-10 Q25,-15 50,-20"
+              stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"
+              stroke-linecap="round"/>
+    </g>
+
+    <!-- 상단 하이라이트 -->
+    <ellipse cx="200" cy="150" rx="100" ry="50" fill="#ffffff" opacity="0.2"
+             transform="rotate(-30 200 150)" filter="url(#blur)"/>
+</svg>
