@@ -12,7 +12,7 @@ class CrowdApi {
     } else if (Platform.isAndroid) {
       return 'http://10.0.2.2:5001/api';
     } else if (Platform.isIOS || Platform.isMacOS) {
-      return 'http://localhost:5001/api';  // macOS/iOS용
+      return 'http://10.200.72.41:5001/api';  // macOS/iOS용
     }
     return 'http://localhost:5001/api';
   }
