@@ -8,17 +8,13 @@ class CrowdApi {
   // 맥북 IP와 포트 5001로 수정
   static String get baseUrl {
     if (kIsWeb) {
-      // 웹 브라우저
       return 'http://localhost:5001/api';
     } else if (Platform.isAndroid) {
-      // Android 실제 디바이스 - 맥북 IP 사용
-      return 'http://10.200.73.247:5001/api';
-    } else if (Platform.isIOS) {
-      // iOS 실제 디바이스 - 맥북 IP 사용
-      return 'http://10.200.73.247:5001/api';
+      return 'http://10.0.2.2:5001/api';
+    } else if (Platform.isIOS || Platform.isMacOS) {
+      return 'http://localhost:5001/api';  // macOS/iOS용
     }
-    // 기본값 (실제 디바이스용)
-    return 'http://10.200.73.247:5001/api';
+    return 'http://localhost:5001/api';
   }
 
   // 연결 테스트 함수 - /api/current 사용

@@ -1,5 +1,5 @@
-name: cafeteria_monitor_app
-description: 대학교 식당 혼잡도 모니터링 앱
+name: yeoyuinha
+description: 인하대학교 혼잡도 모니터링 앱 - 여유인하
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -17,6 +17,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1  # ✅ 아이콘 생성 도구 추가
 
 flutter:
   uses-material-design: true
+
+# ✅ 앱 아이콘 설정 추가
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"  # 1024x1024 PNG 이미지
+  min_sdk_android: 21
