@@ -149,3 +149,4 @@ graph LR
 ## 📞 Contact
 * **Email:** minseok.c02@gmail.com
 * **GitHub:** [https://github.com/asdzxc000115](https://github.com/asdzxc000115)
+* **Server** [https://github.com/asdzxc000115/CafeteriaCrowdMonitor.git](https://github.com/asdzxc000115/CafeteriaCrowdMonitor.git)
