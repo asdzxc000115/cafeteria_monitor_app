@@ -28,6 +28,7 @@
 | **개발 인원** | **1인 개발 (Full Stack & AI)** |
 | **담당 역할** | 기획, 시스템 설계, AI 모델 학습, 서버 구축, 앱 개발 전 과정 |
 | **주요 기술** | Python (YOLOv7), Flask, Flutter |
+| **논문 링크** | [DBpia 논문 링크 바로가기](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12337853) |
 
 ### 🛠️ 기획 배경
 * **문제점:** 점심시간마다 긴 대기 줄로 인해 학생들이 식사를 포기하거나 수업에 늦는 경우가 빈번하게 발생했습니다.
